@@ -17,7 +17,7 @@ public class HanoiCircle : MonoBehaviour
 
     Vector3 positionCurrentTable;
 
-    float threshold = 3f;
+    float limitY = -1.8f;
 
     void Awake()
     {
@@ -102,9 +102,9 @@ public class HanoiCircle : MonoBehaviour
             x = positionCurrentPole.x;
         }
 
-        if(collidingWithFloor && mousePosition.y < positionCurrentTable.y)
+        if(mousePosition.y < limitY)
         {
-            y = positionCurrentTable.y;
+            y = limitY;
         }
 
         rb.position = new Vector3(x, y, 0);
@@ -113,10 +113,12 @@ public class HanoiCircle : MonoBehaviour
     private void OnMouseDown()
     {
         isPressed = true;
+        rb.isKinematic = true;
     }
 
     private void OnMouseUp()
     {
         isPressed = false;
+        rb.isKinematic = false;
     }
 }

@@ -153,8 +153,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.8621454, y: 3.9647121, z: 1}
-  m_Center: {x: 0.13280869, y: -1.9907188, z: 0}
+  m_Size: {x: 1.0044653, y: 3.9647121, z: 1}
+  m_Center: {x: 0.0851599, y: -1.9907188, z: 0}
 --- !u!54 &608096434
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -429,8 +429,6 @@ GameObject:
   m_Component:
   - component: {fileID: 738514095}
   - component: {fileID: 738514097}
-  - component: {fileID: 738514096}
-  - component: {fileID: 738514098}
   m_Layer: 0
   m_Name: Palo 1
   m_TagString: Untagged
@@ -451,18 +449,6 @@ Transform:
   m_Father: {fileID: 1252528814}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
---- !u!65 &738514096
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 738514094}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.16000004, y: 0.16000004, z: 0.2}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!212 &738514097
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -507,21 +493,6 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
---- !u!54 &738514098
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 738514094}
-  serializedVersion: 2
-  m_Mass: 100
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &863104300
 GameObject:
   m_ObjectHideFlags: 0
@@ -596,8 +567,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.057304133, y: 0.16000004, z: 3.4871483}
-  m_Center: {x: -0.05100917, y: 0, z: 0.13863516}
+  m_Size: {x: 0.009759234, y: 0.16000004, z: 1.2369642}
+  m_Center: {x: -0.027236758, y: 0, z: 0.044373512}
 --- !u!65 &901611886
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -608,8 +579,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.06453139, y: 0.16000004, z: 3.4871483}
-  m_Center: {x: 0.04773444, y: 0, z: 0.13863516}
+  m_Size: {x: 0.008432228, y: 0.16000004, z: 1.1756926}
+  m_Center: {x: 0.019684868, y: 0, z: 0.056970596}
 --- !u!65 &901611887
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -620,8 +591,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.16000004, y: 0.16000004, z: 1.5479176}
-  m_Center: {x: 0, y: 0, z: 1.1082506}
+  m_Size: {x: 0.059483048, y: 0.16000004, z: 0.31652093}
+  m_Center: {x: -0.0024804496, y: 0, z: 0.49255228}
 --- !u!65 &901611888
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -632,8 +603,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.16000004, y: 0.16000004, z: 1.4699602}
-  m_Center: {x: 0, y: 0, z: -0.8896171}
+  m_Size: {x: 0.054567233, y: 0.16000004, z: 0.4073019}
+  m_Center: {x: -0.0018854925, y: 0, z: -0.56992114}
 --- !u!212 &901611889
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -689,6 +660,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 070fc91496976450e85973e579a8e448, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  limitY: -2
 --- !u!54 &901611891
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -770,8 +742,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1238317354}
   - component: {fileID: 1238317356}
-  - component: {fileID: 1238317355}
-  - component: {fileID: 1238317357}
   m_Layer: 0
   m_Name: Palo 3
   m_TagString: Untagged
@@ -792,18 +762,6 @@ Transform:
   m_Father: {fileID: 1252528814}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
---- !u!65 &1238317355
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1238317353}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.16000004, y: 0.16000004, z: 0.2}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!212 &1238317356
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -848,21 +806,6 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
---- !u!54 &1238317357
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1238317353}
-  serializedVersion: 2
-  m_Mass: 100
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &1252528813
 GameObject:
   m_ObjectHideFlags: 0
@@ -1074,8 +1017,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.8621454, y: 3.9899797, z: 1}
-  m_Center: {x: 0.13280869, y: -1.978085, z: 0}
+  m_Size: {x: 1.0044667, y: 3.9899797, z: 1}
+  m_Center: {x: 0.085160196, y: -1.978085, z: 0}
 --- !u!54 &1934217033
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1100,8 +1043,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1969993138}
   - component: {fileID: 1969993140}
-  - component: {fileID: 1969993139}
-  - component: {fileID: 1969993141}
   m_Layer: 0
   m_Name: Palo 2
   m_TagString: Untagged
@@ -1122,18 +1063,6 @@ Transform:
   m_Father: {fileID: 1252528814}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
---- !u!65 &1969993139
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1969993137}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.16000004, y: 0.16000004, z: 0.2}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!212 &1969993140
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1178,21 +1107,6 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
---- !u!54 &1969993141
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1969993137}
-  serializedVersion: 2
-  m_Mass: 100
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &2058886187
 GameObject:
   m_ObjectHideFlags: 0
@@ -1233,8 +1147,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.8621454, y: 4.0010605, z: 1}
-  m_Center: {x: 0.13280869, y: -1.9725447, z: 0}
+  m_Size: {x: 0.8774018, y: 4.0010605, z: 1}
+  m_Center: {x: 0.11692548, y: -1.9725447, z: 0}
 --- !u!54 &2058886190
 Rigidbody:
   m_ObjectHideFlags: 0
