@@ -89,13 +89,13 @@ public class HanoiCircle : MonoBehaviour
         Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         float x = mousePosition.x;
         float y = mousePosition.y;
-
+        Debug.Log(y);
         if (insidePole)
         {
             x = positionCurrentPole.x;
         }
 
-        if(mousePosition.y <= limitY)
+        if(mousePosition.y < limitY)
         {
             y = limitY;
         }
@@ -107,11 +107,13 @@ public class HanoiCircle : MonoBehaviour
     {
         isPressed = true;
         rb.isKinematic = true;
+        rb.useGravity = false;
     }
 
     private void OnMouseUp()
     {
         isPressed = false;
         rb.isKinematic = false;
+        rb.useGravity = true;
     }
 }
