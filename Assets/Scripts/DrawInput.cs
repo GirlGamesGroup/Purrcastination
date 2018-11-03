@@ -5,7 +5,6 @@ using UnityEngine;
 public class DrawInput : MonoBehaviour
 {
     [Header("Cursor")]
-    [SerializeField] Transform cursor;
     [SerializeField] SpriteRenderer cursorSprite_paintColor;
 
     [Header("Line:")]
@@ -31,7 +30,6 @@ public class DrawInput : MonoBehaviour
     {
         mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mousePosition.z = 0;
-        cursor.position = mousePosition; //To move paw!
 
         if (Input.GetMouseButtonDown(0))
         {

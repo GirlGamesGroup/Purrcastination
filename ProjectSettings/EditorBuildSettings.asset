@@ -4,4 +4,19 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 1ccf419cb5c53274e9dca09a72b5d590
+  - enabled: 1
+    path: Assets/Scenes/MiniGamesMenu.unity
+    guid: b0d2957d347143b498536c18c0159b98
+  - enabled: 1
+    path: Assets/Scenes/PawPaint.unity
+    guid: 577069688e72f4f87a9f470d8aa40771
+  - enabled: 1
+    path: Assets/Scenes/TowerOfHanoi.unity
+    guid: 7ab009eaccd9f489a8076da8188fc117
+  - enabled: 1
+    path: Assets/Scenes/WhackARat.unity
+    guid: 3fc2ffef12e244482bb641b9f1f61dbb
