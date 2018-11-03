@@ -12,6 +12,10 @@ public class DrawInput : MonoBehaviour
     [SerializeField] GameObject prefab_trail;
     [SerializeField] Color nullColor;
 
+    [Header("Paper:")]
+    [SerializeField] Transform paper;
+
+
     private Vector3 mousePosition;
     private Color currentColor;
 
@@ -36,7 +40,7 @@ public class DrawInput : MonoBehaviour
             {
                 if (objSelected.tag == "Paper" && currentColor != nullColor)
                 {
-                    drawing = Instantiate(prefab_trail, mousePosition, Quaternion.Euler(0.0f, 0.0f, 0.0f)).GetComponent<LineDrawer>();
+                    drawing = Instantiate(prefab_trail, mousePosition, Quaternion.Euler(0.0f, 0.0f, 0.0f),paper).GetComponent<LineDrawer>();
                     drawing.line.startColor = currentColor;
                     drawing.line.endColor = currentColor;
                 }
