@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class HanoiCircle : MonoBehaviour
 {
+    static float MIN_HEIGHT = -1.8f;
 
     bool insidePole = false;
 
-    bool collidingWithFloor = false;
-
     bool isPressed = false;
+
+    bool objectOnTop = false;
 
     private Rigidbody rb;
 
@@ -17,7 +18,7 @@ public class HanoiCircle : MonoBehaviour
 
     Vector3 positionCurrentTable;
 
-    float limitY = -1.8f;
+    float limitY = MIN_HEIGHT;
 
     void Awake()
     {
@@ -43,26 +44,26 @@ public class HanoiCircle : MonoBehaviour
         {
             StoppedBeingInPole();
         }
-        else if(tagCollision.Equals("Table"))
+        else if (tagCollision.Equals("Bottom") && !collision.gameObject.transform.IsChildOf(this.transform))
         {
-            IsTouchingTable(collision.gameObject.transform.position);
+            objectOnTop = true;
         }
-        else if (tagCollision.Equals("Base"))
+        else if (tagCollision.Equals("Top") && !collision.gameObject.transform.IsChildOf(this.transform))
         {
-            IsTouchingTable(collision.gameObject.transform.position);
+            limitY = transform.position.y;
         }
     }
 
     private void OnTriggerExit(Collider collision)
     {
         string tagCollision = collision.gameObject.tag;
-        if (tagCollision.Equals("Table"))
+        if (tagCollision.Equals("Bottom") && !collision.gameObject.transform.IsChildOf(this.transform))
         {
-            StoppedTouchingTable();
+            objectOnTop = false;
         }
-        else if (tagCollision.Equals("Base"))
+        else if (tagCollision.Equals("Top") && !collision.gameObject.transform.IsChildOf(this.transform))
         {
-            StoppedTouchingTable();
+            limitY = MIN_HEIGHT;
         }
     }
 
@@ -75,24 +76,16 @@ public class HanoiCircle : MonoBehaviour
         }
     }
 
-    public void IsTouchingTable(Vector3 table)
-    {
-        positionCurrentTable = table;
-        collidingWithFloor = true;
-    }
-
     public void StoppedBeingInPole()
     {
         insidePole = false;
     }
 
-    public void StoppedTouchingTable()
-    {
-        collidingWithFloor = false;
-    }
-
     private void DragDisc()
     {
+        if (objectOnTop)
+            return;
+
         Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         float x = mousePosition.x;
         float y = mousePosition.y;
@@ -102,7 +95,7 @@ public class HanoiCircle : MonoBehaviour
             x = positionCurrentPole.x;
         }
 
-        if(mousePosition.y < limitY)
+        if(mousePosition.y <= limitY)
         {
             y = limitY;
         }

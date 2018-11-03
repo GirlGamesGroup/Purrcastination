@@ -8,6 +8,9 @@ TagManager:
   - Out
   - Base
   - Table
+  - Disk
+  - Bottom
+  - Top
   layers:
   - Default
   - TransparentFX
@@ -17,8 +20,8 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
+  - Pieces
+  - Structure
   - 
   - 
   - 
@@ -44,4 +47,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Structure
+    uniqueID: 3966879061
+    locked: 0
+  - name: Pieces
+    uniqueID: 865852997
     locked: 0
