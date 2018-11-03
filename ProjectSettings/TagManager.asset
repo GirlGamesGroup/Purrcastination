@@ -11,7 +11,12 @@ TagManager:
   - Disk
   - Bottom
   - Top
+<<<<<<< HEAD
   - RattoSpawner
+=======
+  - Color
+  - Paper
+>>>>>>> 81180aba9a79b69ec1e0a9011b07eabb1c6407b5
   layers:
   - Default
   - TransparentFX
@@ -48,4 +53,19 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Structure
+    uniqueID: 276979165
+    locked: 0
+  - name: Disks
+    uniqueID: 3801372739
+    locked: 0
+  - name: Background
+    uniqueID: 967340051
+    locked: 0
+  - name: Fishies
+    uniqueID: 1921217285
+    locked: 0
+  - name: Foreground
+    uniqueID: 3186187279
     locked: 0
