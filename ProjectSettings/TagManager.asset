@@ -3,13 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-<<<<<<< HEAD
   tags: []
-=======
-  tags:
-  - Bottom
-  - Top
->>>>>>> 5cfaf6ee726f2f1f5142333fec9205b9d3f33577
   layers:
   - Default
   - TransparentFX
@@ -47,27 +41,3 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-<<<<<<< HEAD
-=======
-  - name: Structure
-    uniqueID: 3118428841
-    locked: 0
-  - name: Disks(Back)
-    uniqueID: 1070140211
-    locked: 0
-  - name: Sticks
-    uniqueID: 1892973681
-    locked: 0
-  - name: Disks(Front)
-    uniqueID: 3036304691
-    locked: 0
-  - name: Background
-    uniqueID: 2188787247
-    locked: 0
-  - name: Fishies
-    uniqueID: 1466801623
-    locked: 0
-  - name: Foreground
-    uniqueID: 847206297
-    locked: 0
->>>>>>> 5cfaf6ee726f2f1f5142333fec9205b9d3f33577
