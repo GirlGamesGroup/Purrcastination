@@ -12,25 +12,5 @@ public class LineDrawer : MonoBehaviour
     private void Awake()
     {
         line = GetComponent<LineRenderer>();
-        line.positionCount++;
     }
-
-    //private void Update()
-    //{
-    //    if (Input.GetMouseButton(0)) 
-    //    {
-    //        mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-    //        line.positionCount++;
-    //        line.SetPosition(line.positionCount - 1, mousePosition);
-         
-    //    }
-    //    if (Input.GetMouseButtonUp(0))
-    //    {
-    //        if (simplifyLine)
-    //        {
-    //            line.Simplify(simplifyTolerance);
-    //        }
-    //        enabled = false; 
-    //    }
-    //}
 }

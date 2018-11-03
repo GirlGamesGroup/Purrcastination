@@ -4,49 +4,62 @@ using UnityEngine;
 
 public class DrawInput : MonoBehaviour
 {
-
+    [Header("Cursor")]
     [SerializeField] Transform cursor;
-    [SerializeField] SpriteRenderer sprite_paintColor;
+    [SerializeField] SpriteRenderer cursorSprite_paintColor;
+
+    [Header("Line:")]
     [SerializeField] GameObject prefab_trail;
+    [SerializeField] Color nullColor;
+
     private Vector3 mousePosition;
-    private LineDrawer drawing;
-    private Collider2D objSelected;
     private Color currentColor;
-    private bool hasColorBeenChoose = false;
-    
+
+    private Collider2D objSelected;
+    private LineDrawer drawing;
+
+    private void Awake()
+    {
+        currentColor = nullColor;
+    }
 
     private void Update()
     {
         mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mousePosition.z = 0;
-        cursor.position = mousePosition;
+        cursor.position = mousePosition; //To move paw!
 
-            if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0))
+        {
+            objSelected = Physics2D.OverlapCircle(mousePosition, 0.05f);
+            if (objSelected != null)
             {
-                objSelected = Physics2D.OverlapCircle(mousePosition, 0.05f);
-                if (objSelected != null)
+                if (objSelected.tag == "Paper" && currentColor != nullColor)
                 {
-                    if (objSelected.tag == "Paper" && hasColorBeenChoose)
-                    {
-                        drawing = Instantiate(prefab_trail, mousePosition, Quaternion.Euler(0.0f, 0.0f, 0.0f)).GetComponent<LineDrawer>();
-                        drawing.line.startColor = currentColor;
-                        drawing.line.endColor = currentColor;
-                    }
-                    else if (objSelected.tag == "Color")
-                    {
-                        hasColorBeenChoose = true;
+                    drawing = Instantiate(prefab_trail, mousePosition, Quaternion.Euler(0.0f, 0.0f, 0.0f)).GetComponent<LineDrawer>();
+                    drawing.line.startColor = currentColor;
+                    drawing.line.endColor = currentColor;
+                }
+                else if (objSelected.tag == "Color")
+                {
+                    if(currentColor != nullColor)
+                        currentColor = (objSelected.GetComponent<SpriteRenderer>().color + currentColor)/2;
+                    else
                         currentColor = objSelected.GetComponent<SpriteRenderer>().color;
-                        sprite_paintColor.color = currentColor;
-                        objSelected = null;
-                    }
+
+                    cursorSprite_paintColor.color = currentColor;
+                    objSelected = null;
                 }
             }
-            else if (Input.GetMouseButton(0) && objSelected != null && hasColorBeenChoose)
+        }
+        else if (objSelected != null && objSelected.tag == "Paper" && currentColor != nullColor)
+        {
+            if (Input.GetMouseButton(0))
             {
                 drawing.line.positionCount++;
                 drawing.line.SetPosition(drawing.line.positionCount - 1, mousePosition);
             }
-            else if (Input.GetMouseButtonUp(0) && objSelected != null && hasColorBeenChoose)
+            else if (Input.GetMouseButtonUp(0))
             {
                 if (drawing.simplifyLine)
                 {
@@ -54,6 +67,7 @@ public class DrawInput : MonoBehaviour
                 }
                 drawing.enabled = false;
             }
+        }
         
 
     }
