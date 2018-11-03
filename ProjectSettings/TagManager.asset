@@ -11,9 +11,6 @@ TagManager:
   - Disk
   - Bottom
   - Top
-  tags:
-  - Paper
-  - Color
   layers:
   - Default
   - TransparentFX
@@ -50,4 +47,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Structure
+    uniqueID: 276979165
+    locked: 0
+  - name: Disks
+    uniqueID: 3801372739
     locked: 0
