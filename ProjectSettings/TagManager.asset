@@ -4,6 +4,14 @@
 TagManager:
   serializedVersion: 2
   tags:
+  - Pole
+  - Out
+  - Base
+  - Table
+  - Disk
+  - Bottom
+  - Top
+  tags:
   - Paper
   - Color
   layers:
@@ -15,8 +23,8 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
+  - Pieces
+  - Structure
   - 
   - 
   - 
@@ -42,7 +50,4 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: Line
-    uniqueID: 36596565
     locked: 0
