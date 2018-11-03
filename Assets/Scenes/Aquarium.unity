@@ -113,6 +113,7 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+<<<<<<< HEAD
 --- !u!1 &1052220844
 GameObject:
   m_ObjectHideFlags: 0
@@ -214,6 +215,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42f8e6498e3cb40ab9af7dae4b601036, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+=======
+>>>>>>> origin/master
 --- !u!1 &1071015644
 GameObject:
   m_ObjectHideFlags: 0
