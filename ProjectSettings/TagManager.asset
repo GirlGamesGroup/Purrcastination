@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Bottom
   - Top
+  tags: []
   layers:
   - Default
   - TransparentFX
@@ -44,23 +45,17 @@ TagManager:
     uniqueID: 0
     locked: 0
   - name: Structure
-    uniqueID: 3118428841
+    uniqueID: 276979165
     locked: 0
-  - name: Disks(Back)
-    uniqueID: 1070140211
-    locked: 0
-  - name: Sticks
-    uniqueID: 1892973681
-    locked: 0
-  - name: Disks(Front)
-    uniqueID: 3036304691
+  - name: Disks
+    uniqueID: 3801372739
     locked: 0
   - name: Background
-    uniqueID: 2188787247
+    uniqueID: 967340051
     locked: 0
   - name: Fishies
-    uniqueID: 1466801623
+    uniqueID: 1921217285
     locked: 0
   - name: Foreground
-    uniqueID: 847206297
+    uniqueID: 3186187279
     locked: 0
