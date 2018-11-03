@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class HanoiCircle : MonoBehaviour
 {
-    static float MIN_HEIGHT = -1.8f;
+    static float MIN_HEIGHT = -0.1f;
 
     bool insidePole = false;
 

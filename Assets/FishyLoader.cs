@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class FishyLoader : MonoBehaviour {
 
-    float topLimit = 4f;
+    float topLimit = 1f;
 
     float bottomLimit = -4f;
 
-    float leftLimit = -5f;
+    float leftLimit = -3f;
 
-    float rightLimit = 5f;
+    float rightLimit = 4.5f;
 
     SimpleObjectPool pool;
+
+    [SerializeField]
+    Sprite[] fishieOptions;
 
     // Use this for initialization
 	void Start () {
@@ -24,6 +27,7 @@ public class FishyLoader : MonoBehaviour {
             GameObject pececito = pool.GetObject();
             float x = Random.Range(leftLimit, rightLimit);
             float y = Random.Range(bottomLimit, topLimit);
+            pececito.GetComponent<SpriteRenderer>().sprite = fishieOptions[i % 3];
             pececito.transform.position = new Vector3(x, y, 0);
             pececito.transform.parent = gameObject.transform;
         }
