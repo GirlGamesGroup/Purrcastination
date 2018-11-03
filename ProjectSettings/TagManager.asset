@@ -11,9 +11,7 @@ TagManager:
   - Disk
   - Bottom
   - Top
-  tags:
-  - Paper
-  - Color
+  - RattoSpawner
   layers:
   - Default
   - TransparentFX
