@@ -11,8 +11,12 @@ TagManager:
   - Disk
   - Bottom
   - Top
+<<<<<<< HEAD
+  - RattoSpawner
+=======
   - Color
   - Paper
+>>>>>>> 81180aba9a79b69ec1e0a9011b07eabb1c6407b5
   layers:
   - Default
   - TransparentFX
