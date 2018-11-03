@@ -20,3 +20,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/WhackARat.unity
     guid: 3fc2ffef12e244482bb641b9f1f61dbb
+  - enabled: 1
+    path: Assets/Scenes/Credits.unity
+    guid: 68fc4cd8bce91174e8bffb5ae5cc7506
