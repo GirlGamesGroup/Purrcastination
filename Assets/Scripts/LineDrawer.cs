@@ -1,8 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-// © 2018 TheFlyingKeyboard and released under MIT License 
-// theflyingkeyboard.net 
+﻿using UnityEngine;
+
 public class LineDrawer : MonoBehaviour
 {
     public LineRenderer line;
