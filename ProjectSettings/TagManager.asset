@@ -3,9 +3,12 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
+<<<<<<< HEAD
+=======
   tags:
   - Bottom
   - Top
+>>>>>>> 797d28f2cfcd2c35eb30ad76d024289decde3348
   tags: []
   layers:
   - Default
@@ -44,6 +47,8 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+<<<<<<< HEAD
+=======
   - name: Structure
     uniqueID: 276979165
     locked: 0
@@ -59,3 +64,4 @@ TagManager:
   - name: Foreground
     uniqueID: 3186187279
     locked: 0
+>>>>>>> 797d28f2cfcd2c35eb30ad76d024289decde3348
