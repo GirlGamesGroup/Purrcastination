@@ -89,7 +89,6 @@ public class HanoiCircle : MonoBehaviour
         Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         float x = mousePosition.x;
         float y = mousePosition.y;
-        Debug.Log(y);
         if (insidePole)
         {
             x = positionCurrentPole.x;

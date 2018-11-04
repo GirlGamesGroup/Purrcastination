@@ -14,22 +14,24 @@ public class FishyManager : MonoBehaviour
     void Awake()
     {
         if (instance == null)
+        {
             instance = this;
+            //Sets this to not be destroyed when reloading scene
+            DontDestroyOnLoad(gameObject);
 
-        else if (instance != this)
+            fishies = PlayerPrefs.GetInt("Fishies");
+            secondsRemaining = PlayerPrefs.GetInt("SecondsRemaining");
+            if (secondsRemaining == 0)
+            {
+                secondsRemaining = 180;
+            }
+
+            SceneManager.sceneLoaded += OnSceneLoaded;
+        }
+        else
             Destroy(gameObject);
 
-        //Sets this to not be destroyed when reloading scene
-        DontDestroyOnLoad(gameObject);
-
-        fishies = PlayerPrefs.GetInt("Fishies");
-        secondsRemaining = PlayerPrefs.GetInt("SecondsRemaining");
-        if(secondsRemaining == 0)
-        {
-            secondsRemaining = 180;
-        }
-
-        SceneManager.sceneLoaded += OnSceneLoaded;
+       
     }
 
     public void OnSceneLoaded(Scene scene, LoadSceneMode loadSceneMode)
