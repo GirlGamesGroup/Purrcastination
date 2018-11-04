@@ -14,6 +14,7 @@ public class ButtonController : MonoBehaviour {
 
     public void ChangeScene(string scene)
     {
+        Debug.Log("Click");
         audio.clip =  btnSound;
         audio.Play();
         this.scene = scene;
