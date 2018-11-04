@@ -20,8 +20,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4040816817660486}
   - component: {fileID: 212521512207818124}
-  - component: {fileID: 65051870892359132}
   - component: {fileID: 114392526100754918}
+  - component: {fileID: 61087969439975712}
   m_Layer: 0
   m_Name: Ratto
   m_TagString: Untagged
@@ -36,24 +36,37 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1590453351517758}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.42, y: -1.83, z: -0.61}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -3.8081732, y: -0.96159136, z: -0.61}
+  m_LocalScale: {x: 0.3203698, y: 0.3203698, z: 0.3203698}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &65051870892359132
-BoxCollider:
+--- !u!61 &61087969439975712
+BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1590453351517758}
+  m_Enabled: 1
+  m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 5.19, y: 7.47}
+    newSize: {x: 9.6, y: 5.65}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2, y: 3, z: 1}
-  m_Center: {x: 0, y: 0.5, z: 0}
+  m_Size: {x: 5.19, y: 7.47}
+  m_EdgeRadius: 0
 --- !u!114 &114392526100754918
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -100,7 +113,7 @@ SpriteRenderer:
   m_SortingLayerID: -328088235
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 67f0a01b7d5519e4087b250833c89b8d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ed8b54e9a5f8c7640badd19ff0fd88f2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
