@@ -48,7 +48,7 @@ public class DrawInput : MonoBehaviour
                         currentColor = (objSelected.GetComponent<SpriteRenderer>().color + currentColor)/2;
                     else
                         currentColor = objSelected.GetComponent<SpriteRenderer>().color;
-
+                    cursorSprite_paintColor.enabled = true;
                     cursorSprite_paintColor.color = currentColor;
                     objSelected = null;
                 }
