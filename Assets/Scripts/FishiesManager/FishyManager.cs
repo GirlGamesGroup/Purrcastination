@@ -50,7 +50,7 @@ public class FishyManager : MonoBehaviour
         {
             yield return new WaitForSeconds(1f);
             secondsRemaining--;
-            Debug.Log(secondsRemaining);
+            //Debug.Log(secondsRemaining);
         }
         fishies++;
         PlayerPrefs.SetInt("Fishies", fishies);

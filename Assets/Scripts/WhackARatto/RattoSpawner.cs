@@ -20,9 +20,9 @@ public class RattoSpawner : MonoBehaviour {
 		hasRatto = new bool[3];
 		TotalRattos = 0;
 
-		SpawnPoints [0] = new Vector3 (-2.75f, 0.39f, -0.61f);
-		SpawnPoints [1] = new Vector3 (0.42f, -1.83f, -0.61f);
-		SpawnPoints [2] = new Vector3 (3.44f, 0.39f, -0.61f);
+		SpawnPoints [0] = new Vector3 (-3.82f, -1.81f, -0.61f);
+		SpawnPoints [1] = new Vector3 (0.37f, -0.88f, -0.61f);
+		SpawnPoints [2] = new Vector3 (4f, -1.76f, -0.61f);
 
 		for (int i = 0; i < 3; i++) {
 			hasRatto [i] = false;

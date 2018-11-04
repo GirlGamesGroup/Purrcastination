@@ -28,9 +28,9 @@ public class RattoMovementScript : MonoBehaviour {
 		SpRen = GetComponent<SpriteRenderer> ();
 		RS =GameObject.FindGameObjectWithTag("RattoSpawner").GetComponent<RattoSpawner> ();
 
-		if (gameObject.transform.position == new Vector3 (-2.75f, 0.39f, -0.61f)) {
+		if (gameObject.transform.position == new Vector3(-3.82f, -1.81f, -0.61f)) {
 			currentPlace = 0;
-		} else if (gameObject.transform.position == new Vector3 (0.42f, -1.83f, -0.61f)) {
+		} else if (gameObject.transform.position == new Vector3(0.37f, -0.88f, -0.61f)) {
 			currentPlace = 1;
 		} else {
 			currentPlace = 2;
@@ -38,7 +38,7 @@ public class RattoMovementScript : MonoBehaviour {
 
 		StartPos = gameObject.transform.position;
 		EndPos = gameObject.transform.position;
-		EndPos.y += 2f;
+		EndPos.y += 1.5f;
 
 		StartCoroutine (LifeCycle());
 	}
@@ -50,14 +50,14 @@ public class RattoMovementScript : MonoBehaviour {
 			yield return new WaitForEndOfFrame ();
 		}
 
-		yield return new WaitForSeconds(0.1f);
-		SpRen.flipX = true;
-		yield return new WaitForSeconds(0.1f);
-		SpRen.flipX = false;	
-		yield return new WaitForSeconds(0.1f);
-		SpRen.flipX = true;
-		yield return new WaitForSeconds(0.1f);
-		SpRen.flipX = true;
+		//yield return new WaitForSeconds(0.1f);
+		//SpRen.flipX = true;
+		//yield return new WaitForSeconds(0.1f);
+		//SpRen.flipX = false;	
+		//yield return new WaitForSeconds(0.1f);
+		//SpRen.flipX = true;
+		//yield return new WaitForSeconds(0.1f);
+		//SpRen.flipX = true;
 		while (transform.position != StartPos) {
 			transform.position = Vector3.MoveTowards (transform.position, StartPos, step);
 			yield return new WaitForEndOfFrame ();
