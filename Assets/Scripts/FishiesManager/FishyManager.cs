@@ -14,6 +14,11 @@ public class FishyManager : MonoBehaviour
 
     int secondsRemaining = 60;
 
+    GameObject littleClock;
+
+    [SerializeField]
+    AudioSource audioSource;
+
     void Awake()
     {
         if (instance == null)
@@ -21,7 +26,8 @@ public class FishyManager : MonoBehaviour
             instance = this;
             //Sets this to not be destroyed when reloading scene
             DontDestroyOnLoad(gameObject);
-
+            //PlayerPrefs.SetInt("Fishies", 0);
+            //PlayerPrefs.SetInt("SecondsRemaining", 60);
             fishies = PlayerPrefs.GetInt("Fishies");
             secondsRemaining = PlayerPrefs.GetInt("SecondsRemaining");
             if (secondsRemaining == 0)
@@ -30,6 +36,8 @@ public class FishyManager : MonoBehaviour
             }
 
             SceneManager.sceneLoaded += OnSceneLoaded;
+            littleClock = transform.GetChild(0).gameObject;
+            littleClock.SetActive(false);
         }
         else
             Destroy(gameObject);
@@ -40,6 +48,7 @@ public class FishyManager : MonoBehaviour
     public void OnSceneLoaded(Scene scene, LoadSceneMode loadSceneMode)
     {
         StopAllCoroutines();
+        littleClock.SetActive(false);
         if(scene.name.Equals("WhackARat") || scene.name.Equals("PawPaint") ||
           scene.name.Equals("Aquarium") || scene.name.Equals("TowerOfHanoi"))
         {
@@ -49,16 +58,24 @@ public class FishyManager : MonoBehaviour
 
     private IEnumerator PassTime()
     {
-        while(secondsRemaining > 0)
+        littleClock.SetActive(true);
+        littleClock.transform.rotation = Quaternion.identity;
+        littleClock.transform.Rotate(new Vector3(0, 0, secondsRemaining));
+        while (secondsRemaining > 0)
         {
             yield return new WaitForSeconds(1f);
+            littleClock.transform.Rotate(new Vector3(0, 0, -10));
             secondsRemaining--;
             //Debug.Log(secondsRemaining);
         }
         PlayerPrefs.SetInt("Fishies", PlayerPrefs.GetInt("Fishies") + 1);
         fishies = PlayerPrefs.GetInt("Fishies");
-        NewFish();
+        if(FindObjectOfType<FishyLoader>() != null)
+        {
+            NewFish();
+        }
         secondsRemaining = 60;
+        audioSource.Play();
         StartCoroutine(PassTime());
     }
 
