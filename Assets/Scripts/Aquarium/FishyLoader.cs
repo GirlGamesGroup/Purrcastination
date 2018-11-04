@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class FishyLoader : MonoBehaviour {
 
-    float topLimit = 1f;
+    float topLimit = 1.5f;
 
-    float bottomLimit = -4f;
+    float bottomLimit = -3f;
 
-    float leftLimit = -3f;
+    float leftLimit = -4.8f;
 
-    float rightLimit = 4.5f;
+    float rightLimit = 4.8f;
 
     SimpleObjectPool pool;
 
@@ -19,6 +19,7 @@ public class FishyLoader : MonoBehaviour {
 
     // Use this for initialization
 	void Start () {
+        FishyManager.NewFish += NewFishForTank;
         int numberOfFishies = PlayerPrefs.GetInt("Fishies");
         //int numberOfFishies = 10;
         pool = GetComponent<SimpleObjectPool>();
@@ -38,4 +39,24 @@ public class FishyLoader : MonoBehaviour {
 	void Update () {
 		
 	}
+
+    public bool InsideLimits(Vector3 point)
+    {
+        bool isInside = true;
+        if(point.x < leftLimit || point.x > rightLimit || point.y < bottomLimit || point.y > topLimit)
+        {
+            isInside = false;
+        }
+        return isInside;
+    }
+
+    void NewFishForTank()
+    {
+        GameObject pececito = pool.GetObject();
+        float x = Random.Range(leftLimit, rightLimit);
+        float y = Random.Range(bottomLimit, topLimit);
+        pececito.GetComponent<SpriteRenderer>().sprite = fishieOptions[transform.childCount % 3];
+        pececito.transform.position = new Vector3(x, y, 0);
+        pececito.transform.parent = gameObject.transform;
+    }
 }
