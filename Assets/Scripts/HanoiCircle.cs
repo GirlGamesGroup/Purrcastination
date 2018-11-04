@@ -6,6 +6,8 @@ public class HanoiCircle : MonoBehaviour
 {
     static float MIN_HEIGHT = -0.1f;
 
+    private AudioSource audioSource;
+
     bool insidePole = false;
 
     bool isPressed = false;
@@ -23,6 +25,7 @@ public class HanoiCircle : MonoBehaviour
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
+        audioSource = GetComponent<AudioSource>();
     }
     // Update is called once per frame
     void Update()
@@ -47,6 +50,7 @@ public class HanoiCircle : MonoBehaviour
         else if (tagCollision.Equals("Bottom") && !collision.gameObject.transform.IsChildOf(this.transform))
         {
             objectOnTop = true;
+            audioSource.Play();
         }
         else if (tagCollision.Equals("Top") && !collision.gameObject.transform.IsChildOf(this.transform))
         {
