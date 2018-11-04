@@ -3,7 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class RattoMovementScript : MonoBehaviour {
-	private int currentPlace;
+
+    private AudioSource audioSource;
+
+
+    private int currentPlace;
 	private bool[] hasRattoTemp;
 	private RattoSpawner RS;
 	private bool hasBeenCreated;
@@ -20,7 +24,9 @@ public class RattoMovementScript : MonoBehaviour {
 
 	void Awake(){
 		step = speedRatto * Time.deltaTime;
-	}
+        audioSource = GetComponent<AudioSource>();
+
+    }
 
 	void Start () {
 		isAlreadyDying = false;
@@ -44,8 +50,12 @@ public class RattoMovementScript : MonoBehaviour {
 	}
 	
 	IEnumerator LifeCycle(){
-		yield return new WaitForSeconds(0.3f);
-		while (transform.position != EndPos) {
+
+        audioSource.clip = SoundEffectController.Instance.goOutSound;
+        audioSource.Play();
+        yield return new WaitForSeconds(0.3f);
+        
+        while (transform.position != EndPos) {
 			transform.position = Vector3.MoveTowards (transform.position, EndPos, step);
 			yield return new WaitForEndOfFrame ();
 		}
@@ -92,6 +102,9 @@ public class RattoMovementScript : MonoBehaviour {
 	}
 
 	IEnumerator ShakeAnimation(){
+
+        audioSource.clip = SoundEffectController.Instance.diedSound;
+        audioSource.Play();
 		MiddlePos = gameObject.transform.position;
 		Vector3 LeftPos = gameObject.transform.position;
 		LeftPos.x += 0.2f;

@@ -14,6 +14,10 @@ public class DrawInput : MonoBehaviour
     [Header("Paper:")]
     [SerializeField] Transform paper;
 
+    [Header("Audio")]
+    [SerializeField] AudioSource audio;
+
+
 
     private Vector3 mousePosition;
     private Color currentColor;
@@ -48,6 +52,7 @@ public class DrawInput : MonoBehaviour
                         currentColor = (objSelected.GetComponent<SpriteRenderer>().color + currentColor)/2;
                     else
                         currentColor = objSelected.GetComponent<SpriteRenderer>().color;
+                    audio.Play();
                     cursorSprite_paintColor.enabled = true;
                     cursorSprite_paintColor.color = currentColor;
                     objSelected = null;
