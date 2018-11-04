@@ -5,11 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class FishyManager : MonoBehaviour
 {
+    public delegate void Fishies();
+    public static event Fishies NewFish;
+
     public static FishyManager instance = null;
 
     int fishies = 0;
 
-    int secondsRemaining = 180;
+    int secondsRemaining = 60;
 
     void Awake()
     {
@@ -23,7 +26,7 @@ public class FishyManager : MonoBehaviour
             secondsRemaining = PlayerPrefs.GetInt("SecondsRemaining");
             if (secondsRemaining == 0)
             {
-                secondsRemaining = 180;
+                secondsRemaining = 60;
             }
 
             SceneManager.sceneLoaded += OnSceneLoaded;
@@ -52,9 +55,11 @@ public class FishyManager : MonoBehaviour
             secondsRemaining--;
             //Debug.Log(secondsRemaining);
         }
-        fishies++;
-        PlayerPrefs.SetInt("Fishies", fishies);
-        secondsRemaining = 180;
+        PlayerPrefs.SetInt("Fishies", PlayerPrefs.GetInt("Fishies") + 1);
+        fishies = PlayerPrefs.GetInt("Fishies");
+        NewFish();
+        secondsRemaining = 60;
+        StartCoroutine(PassTime());
     }
 
     private void OnApplicationQuit()
